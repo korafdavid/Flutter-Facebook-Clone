@@ -1,4 +1,4 @@
-# facebook UI designed with Flutter
+# Facebook UI designed with Flutter
 
 <img src="https://github.com/korafdavid/Flutter-Facebook-Clone/blob/main/assets/gitHub_images/three.png" height=400>
 
