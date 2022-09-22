@@ -12,13 +12,11 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-     
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextField(
   onChanged: (String? value) {
     
   },
@@ -27,22 +25,22 @@ class _ProfilePageState extends State<ProfilePage> {
     prefixIcon: Icon(Icons.search),
     labelText: 'Suche',
     labelStyle: TextStyle(
-      fontWeight: FontWeight.w700,
-      color: Colors.green,
-      fontSize: 14.0,
+    fontWeight: FontWeight.w700,
+    color: Colors.green,
+    fontSize: 14.0,
     ),
     filled: true,
     fillColor: Colors.red[390],
     contentPadding: EdgeInsets.only(
-      top: 28.0,
-      bottom: 14.0,
-      left: 14.0,
-      right: 14.0,
+    top: 28.0,
+    bottom: 14.0,
+    left: 14.0,
+    right: 14.0,
     ),
     floatingLabelBehavior: FloatingLabelBehavior.always,
     border: OutlineInputBorder(
-      borderSide: BorderSide.none,
-      borderRadius: BorderRadius.circular(6.0),
+    borderSide: BorderSide.none,
+    borderRadius: BorderRadius.circular(6.0),
     ),
     // enabledBorder: OutlineInputBorder(
     //   borderSide: BorderSide.none,
@@ -59,10 +57,9 @@ class _ProfilePageState extends State<ProfilePage> {
     color: Colors.black,
     fontSize: 14.0,
   ),
-            ),
-          )
-        ],
-      )
+          ),
+        )
+      ],
     );
   }
 }

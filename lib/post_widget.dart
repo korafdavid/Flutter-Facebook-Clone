@@ -32,13 +32,13 @@ class PostWidget extends StatefulWidget {
 class _PostWidgetState extends State<PostWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-            color: Colors.white10, borderRadius: BorderRadius.circular(16)),
-        padding: const EdgeInsets.only(top: 6),
-           margin:  isLargeScreen(context)? const EdgeInsets.symmetric(horizontal: 150, vertical: 8) : const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-        child: InkWell(
-            child: Column(children: [
+    return InkWell(
+      child: Padding(
+        padding:  isLargeScreen(context)
+                ? EdgeInsets.symmetric(horizontal: 150, vertical: 14)
+                : EdgeInsets.symmetric(horizontal: 4, vertical: 14),
+        child: Card(
+          child: Column(children: [
           Row(
             children: [
               Padding(
@@ -129,7 +129,10 @@ class _PostWidgetState extends State<PostWidget> {
               ),
             ],
           )
-        ])));
+        ]),
+        ),
+      ),
+    );
   }
 }
 

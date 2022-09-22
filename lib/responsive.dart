@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+
 class ResponsiveWidget extends StatelessWidget {
   final Widget largeScreen;
   final Widget mediumScreen;
@@ -41,3 +42,6 @@ class ResponsiveWidget extends StatelessWidget {
     return MediaQuery.of(context).size.width < 1200 &&
         MediaQuery.of(context).size.width > 800;
   }
+
+
+
