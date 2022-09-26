@@ -5,6 +5,7 @@ import 'package:fbclone/mainpage.dart';
 import 'package:fbclone/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,25 +48,34 @@ class _SplashScreenState extends State<SplashScreen> {
             builder: (BuildContext context) => const SignIn())));
   }
 
-  final spin = SpinKitThreeBounce(
-    color: Colors.blue[900]
-  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.asset(
-            'assets/Facebook_Logo.png',
-            height: 50,
-          ),
-          spin
-        ],
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            
+           Padding(
+             padding: const EdgeInsets.only(top: 99.0),
+             child: Icon(FontAwesomeIcons.facebook, size: 90, color: Colors.blue[800]),
+           ),
+            Padding(
+              padding: const EdgeInsets.all(19.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('assets/meta_logo.png', height: 50,),
+                    Text('Meta', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
 
-☻}☻☻☻☻▬▬☻☻☻☻
+}

@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fbclone/watch.dart';
 import 'package:fbclone/search.dart';
 import 'package:fbclone/settings.dart';
+import 'package:iconsax/iconsax.dart';
 
 
 class SmallSreen extends StatefulWidget {
@@ -38,8 +39,8 @@ class _SmallSreenState extends State<SmallSreen> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Ink(
-                          decoration: const ShapeDecoration(
-                              shape: CircleBorder(), color: Colors.white10),
+                          decoration:  ShapeDecoration(
+                              shape: CircleBorder(), color: Colors.grey[200]),
                           width: 40,
                           child: IconButton(
                               onPressed: () {
@@ -53,28 +54,22 @@ class _SmallSreenState extends State<SmallSreen> {
                               ))),
                     ),
                     Ink(
-                        decoration: const ShapeDecoration(
-                            shape: CircleBorder(), color: Colors.white10),
+                        decoration:  ShapeDecoration(
+                            shape: CircleBorder(), color: Colors.grey[200]),
                         width: 40,
                         child: Stack(
                           children: [
                             
-                            Badge(
-                              value: '2',
-                              right: 1,
-                              color: Colors.red,
-                              top: 1,
-                              child: IconButton(
-                                  onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(
-                                        builder: (context) => const SearchPage()));
-                                  },
-                                  icon:  Icon(
-                                    FontAwesomeIcons.facebookMessenger,
-                                    color: Colors.blue[900],
-                                    size: 19,
-                                  )),
-                            ),
+                            IconButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => const SearchPage()));
+                                },
+                                icon:  Icon(
+                                  FontAwesomeIcons.facebookMessenger,
+                                  color: Colors.blue[900],
+                                  size: 19,
+                                )),
                           ],
                         ))
                 
@@ -84,11 +79,11 @@ class _SmallSreenState extends State<SmallSreen> {
                   labelColor: Colors.blue[900],
                   unselectedLabelColor: Colors.grey,
                   tabs: const [
-                    Tab(icon: Icon(Icons.home)),
-                    Tab(icon: Icon(FontAwesomeIcons.youtubeSquare)),
+                    Tab(icon: Icon(Icons.home, size: 40,)),
+                    Tab(icon: Icon(FontAwesomeIcons.youtubeSquare, size: 30)),
                     Tab(icon: Icon(FontAwesomeIcons.storeAlt, size: 20,)),
-                    Tab(icon: Icon(Icons.notifications_outlined)),
-                    Tab(icon: Icon(Icons.menu)),
+                    Tab(icon: Icon(Iconsax.notification, size: 30)),
+                    Tab(icon: Icon(Icons.menu, size: 30)),
                   ]),
             ),
             SliverToBoxAdapter(

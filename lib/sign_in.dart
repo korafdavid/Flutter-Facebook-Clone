@@ -5,6 +5,7 @@ import 'package:fbclone/mainpage.dart';
 import 'package:fbclone/responsive.dart';
 import 'package:fbclone/sign_up.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -38,27 +39,126 @@ class SignInMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          TextFormField(
-            decoration:  InputDecoration(
-              hintText: 'Phone or email',
-              suffixIcon: Icon(Icons.rounded_corner, color: Colors.grey[300]),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              height: 250,
+              decoration: const BoxDecoration(color: Colors.blue),
+              child: Center(
+                child: Icon(FontAwesomeIcons.facebook, size: 60, color: Colors.white),
+              ),
             ),
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              hintText: 'Password',
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:  [
+                Text('English'),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text('Espanol'),
+                ),
+                Text('more...', style: TextStyle(color: Colors.blue[800]))
+              ],
+            ),
+            Container(
+              width: 400,
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Phone or email',
 
+                  // fillColor: Colors.blue[100],
+                  //filled: true,
+                  border: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+                      borderRadius: BorderRadius.circular(7)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+                      borderRadius: BorderRadius.circular(7)),
+                ),
+              ),
             ),
-          ),
-          MaterialButton(
-            onPressed: (){},
-            child:const Text('Log In'),
-            color: Colors.blue[800],
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          )
-        ],
+            Container(
+              width: 400,
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'password',
+                  border: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+                      borderRadius: BorderRadius.circular(7)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+                      borderRadius: BorderRadius.circular(7)),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MaterialButton(
+                color: Colors.blue[600],
+                textColor: Colors.white,
+                minWidth: 400,
+                height: 60,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(7)),
+                onPressed: () async {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainPage()));
+                },
+                child: const Text(
+                  'Log In',
+                  style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+            const Align(
+              alignment: Alignment.center,
+              child: Text('Forgot Password?',
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18)),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
+              child: Row(
+                children: const [
+                  Expanded(child: Divider()),
+                  Padding(
+                    padding: EdgeInsets.all(12.0),
+                    child: Text('OR'),
+                  ),
+                  Expanded(child: Divider())
+                ],
+              ),
+            ),
+                 Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MaterialButton(
+                color: Colors.green[600],
+                textColor: Colors.white,
+                minWidth: 200,
+                height: 40,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(7)),
+                onPressed: () async {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainPage()));
+                },
+                child: const Text(
+                  'Create New Facebook Account',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

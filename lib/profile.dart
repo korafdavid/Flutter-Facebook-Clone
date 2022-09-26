@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({ Key? key }) : super(key: key);
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
   _ProfilePageState createState() => _ProfilePageState();
@@ -12,54 +12,175 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-  onChanged: (String? value) {
-    
-  },
- textAlignVertical: TextAlignVertical.center,
-  decoration: InputDecoration(
-    prefixIcon: Icon(Icons.search),
-    labelText: 'Suche',
-    labelStyle: TextStyle(
-    fontWeight: FontWeight.w700,
-    color: Colors.green,
-    fontSize: 14.0,
-    ),
-    filled: true,
-    fillColor: Colors.red[390],
-    contentPadding: EdgeInsets.only(
-    top: 28.0,
-    bottom: 14.0,
-    left: 14.0,
-    right: 14.0,
-    ),
-    floatingLabelBehavior: FloatingLabelBehavior.always,
-    border: OutlineInputBorder(
-    borderSide: BorderSide.none,
-    borderRadius: BorderRadius.circular(6.0),
-    ),
-    // enabledBorder: OutlineInputBorder(
-    //   borderSide: BorderSide.none,
-    //   borderRadius: BorderRadius.circular(6.0),
-    // ),
-    //  focusedBorder: OutlineInputBorder(
-    //   borderSide: BorderSide.none,
-    //   borderRadius: BorderRadius.circular(6.0),
-    // ),
-  ),
-  cursorWidth: 1.5,
-  style: TextStyle(
-    fontWeight: FontWeight.w600,
-    color: Colors.black,
-    fontSize: 14.0,
-  ),
-          ),
-        )
-      ],
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Container(height: 300),
+                Image.asset('assets/profile2.jpg',
+                    width: double.infinity, height: 140, fit: BoxFit.cover),
+                Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.center,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 50, bottom: 14),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.blue[600],
+                          radius: 90,
+                          child: CircleAvatar(
+                            radius: 86,
+                            backgroundImage: AssetImage('assets/profileImage.jpeg'),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Text('David Okoroafor',
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 26)),
+                    Text(
+                      'korafdavid',
+                      style: TextStyle(fontSize: 19),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                child: Container(
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(15)),
+                  child: Column(
+                    children: [
+                      Text('SOTWARE DEVELOPER'),
+                      Text('THE EXCEPTION'),
+                      const Divider(),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.work,
+                              size: 30,
+                              color: Colors.grey[700],
+                            ),
+                             Text.rich(
+                              TextSpan(
+                                children: const [
+                                  TextSpan(text: ' Works at  '),
+                                  TextSpan(
+                                    text: 'UPWORK',
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.school,
+                              size: 30,
+                              color: Colors.grey[700],
+                            ),
+                            Text.rich(
+                              TextSpan(
+                                children: const [
+                                  TextSpan(text: ' Studied at  '),
+                                  TextSpan(
+                                    text: 'LIVING WORD ACADEMY SECONDARY',
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                            Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.home,
+                              size: 30,
+                              color: Colors.grey[700],
+                            ),
+                            Text.rich(
+                              TextSpan(
+                                children: const [
+                                  TextSpan(text: ' Lives at  '),
+                                  TextSpan(
+                                    text: 'Aba, Abia State',
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                            Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.favorite,
+                              size: 30,
+                              color: Colors.grey[700],
+                            ),
+                            Text.rich(
+                              TextSpan(
+                                children: const [
+                                  TextSpan(
+                                    text: '  Single',
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                            Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.wifi,
+                              size: 30,
+                              color: Colors.grey[700],
+                            ),
+                            Text.rich(
+                              TextSpan(
+                                children: const [
+                                  TextSpan(text: ' Followed by  '),
+                                  TextSpan(
+                                    text: '9032 people',
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
