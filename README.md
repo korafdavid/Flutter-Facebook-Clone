@@ -4,7 +4,7 @@ Facebook user interfaced developed with flutter for Mobile, web and Desktop Plat
 
 
 # MOBILE 
-
+|         a         |             a    |         a       |
 |  -----          |   -----               | --------              |
 |   <img src='https://github.com/korafdavid/flutter_facebook/blob/main/assets/gitHub_images/Iphone%201.png?raw=true'>        |          
 <img  src='https://github.com/korafdavid/flutter_facebook/blob/main/assets/gitHub_images/Iphone5.png?raw=true'>                |         
